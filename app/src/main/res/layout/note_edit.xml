@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:textIsSelectable="false"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:hint="@string/title_hint" />
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/type2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/radio_basic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/typeBasic"
+                android:checked="true"
+                android:onClick="onRadioButtonClicked" />
+            <RadioButton android:id="@+id/radio_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/typeNormal"
+                android:onClick="onRadioButtonClicked" />
+            <RadioButton android:id="@+id/radio_emergency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/typeEmergency"
+                android:onClick="onRadioButtonClicked" />
+
+            <EditText android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textIsSelectable="false"
+                android:singleLine="true"
+                android:enabled="true"
+                android:lines="1"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_weight="0.28" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:visibility="gone" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:timePickerMode="spinner"
+        android:visibility="gone" />
+
+
+    <EditText android:id="@+id/body" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.19"
+        android:scrollbars="vertical"
+        android:textSize="15dp"
+        android:autoText="false"
+        android:background="#e2e2e2"
+        android:textAlignment="textStart"
+        android:hint="@string/content_hint" />
+
+    <Button android:id="@+id/confirm"
+        android:text="@string/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

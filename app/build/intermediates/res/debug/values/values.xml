@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/moho/AndroidStudioProjects/Notepadv3Solution/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">CSM06</string>
+    <string name="body">Body text</string>
+    <string name="confirm">Done</string>
+    <string name="content_hint">Content here...</string>
+    <string name="edit_note">Edit the Note</string>
+    <string name="menu_delete">Delete the Note</string>
+    <string name="menu_insert">Add a Note</string>
+    <string name="no_notes">Nothing yet</string>
+    <string name="nodeType">Type</string>
+    <string name="title">Title here</string>
+    <string name="title_hint">Title here...</string>
+    <string name="type">Type text</string>
+    <string name="typeBasic">Basic</string>
+    <string name="typeEmergency">High</string>
+    <string name="typeNormal">Normal</string>
+</resources>
