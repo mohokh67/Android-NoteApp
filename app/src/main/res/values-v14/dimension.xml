@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="itemList_height">36dp</dimen>
+    <dimen name="itemList_padding">3dp</dimen>
+    <dimen name="itemList_text_size">17dp</dimen>
+</resources>

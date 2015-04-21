@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.demo.notepad3" >
+    package="com.irfsf.todo808956.notepad"
+    android:versionCode="1" >
+
+    <uses-sdk
+        android:maxSdkVersion="21"
+        android:minSdkVersion="14" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <application android:icon="@drawable/icon" >
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
         <activity
-            android:name="com.android.demo.todo808956.Notepad"
+            android:name="com.irfsf.todo808956.Main"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -14,9 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.android.demo.todo808956.NoteEdit" />
+        <activity android:name="com.irfsf.todo808956.NoteEdit" />
 
-        <receiver android:name="com.android.demo.notepad3.AlarmManagerBroadcastReceiver" />
+        <service
+            android:name="com.irfsf.todo808956.TheAlarmService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <receiver
+            android:name="com.irfsf.todo808956.TheAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
     </application>
 
 </manifest>

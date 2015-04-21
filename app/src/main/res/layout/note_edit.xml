@@ -2,65 +2,125 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <LinearLayout android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
 
         <EditText android:id="@+id/title"
+            android:hint="@string/title_hint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="@integer/note_title_maxLength" />
+    </LinearLayout>
+
+
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+        <EditText android:id="@+id/body"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/content_hint"
+            android:scrollbars="vertical"
+            android:inputType="textMultiLine"
+            android:maxLines="@integer/note_content_maxLines"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/priorityRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/radio_basic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:text="@string/typeBasic"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked" />
+        <RadioButton android:id="@+id/radio_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/typeNormal"
+            android:onClick="onRadioButtonClicked" />
+        <RadioButton android:id="@+id/radio_emergency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/typeEmergency"
+            android:onClick="onRadioButtonClicked" />
+
+        <EditText android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:maxLines="1"
             android:textIsSelectable="false"
             android:singleLine="true"
+            android:enabled="true"
+            android:lines="1"
             android:textStyle="bold"
-            android:hint="@string/title_hint" />
+            android:visibility="gone"
+            android:layout_weight="0.28" />
+
+    </RadioGroup>
+
     </LinearLayout>
 
     <LinearLayout android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/type2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton android:id="@+id/radio_basic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/typeBasic"
-                android:checked="true"
-                android:onClick="onRadioButtonClicked" />
-            <RadioButton android:id="@+id/radio_normal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/typeNormal"
-                android:onClick="onRadioButtonClicked" />
-            <RadioButton android:id="@+id/radio_emergency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/typeEmergency"
-                android:onClick="onRadioButtonClicked" />
 
-            <EditText android:id="@+id/type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:textIsSelectable="false"
-                android:singleLine="true"
-                android:enabled="true"
-                android:lines="1"
-                android:textStyle="bold"
-                android:visibility="gone"
-                android:layout_weight="0.28" />
-        </RadioGroup>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm"
+            android:id="@+id/toggleButton"
+
+            android:textOn="@string/toggle_alarmOn"
+            android:textOff="@string/toggle_alarmOff"
+            android:onClick="onToggleClicked"
+            android:visibility="gone" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alarm_switch"
+            android:id="@+id/AlarmSwitch"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alarm_text"
+            android:visibility="gone"
+            android:id="@+id/alarmText"
+            android:textColor="@color/alarm_text_colour" />
+
+
 
     </LinearLayout>
 
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <DatePicker
         android:layout_width="wrap_content"
@@ -75,20 +135,12 @@
         android:timePickerMode="spinner"
         android:visibility="gone" />
 
-
-    <EditText android:id="@+id/body" android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.19"
-        android:scrollbars="vertical"
-        android:textSize="15dp"
-        android:autoText="false"
-        android:background="#e2e2e2"
-        android:textAlignment="textStart"
-        android:hint="@string/content_hint" />
-
     <Button android:id="@+id/confirm"
         android:text="@string/confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
 
 </LinearLayout>
